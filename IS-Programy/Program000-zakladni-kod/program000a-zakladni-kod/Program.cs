@@ -6,7 +6,7 @@ while (again == "a")
     Console.WriteLine("*********** Výpis číselné řady *************");
     Console.WriteLine("********************************************");
     Console.WriteLine("********************************************");
-    Console.WriteLine("************* Tomáš Žižka ******************");
+    Console.WriteLine("************* Jana Křelinová ******************");
     Console.WriteLine("************** 2.10.2025 *******************");
     Console.WriteLine("********************************************");
     Console.WriteLine("********************************************");
@@ -19,11 +19,10 @@ while (again == "a")
     // Vstup hodnoty do programu, řešený lépe
     Console.Write("Zadejte první číslo řady (celé číslo): ");
     int first;
-    while (!int.TryParse(Console.ReadLine(), out first))
+    while (!int.TryParse(Console.ReadLine(), out first)) 
     {
         Console.Write("Nezadali jste celé číslo. Zadejte první číslo řady znovu: ");
     }
-
 
 
 

@@ -1,0 +1,5 @@
+C:\Users\jik\IS_2025_Sk2\github-jk-is-2025-sk2\obj\Debug\net9.0\github-jk-is-2025-sk2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jik\IS_2025_Sk2\github-jk-is-2025-sk2\obj\Debug\net9.0\github-jk-is-2025-sk2.AssemblyInfoInputs.cache
+C:\Users\jik\IS_2025_Sk2\github-jk-is-2025-sk2\obj\Debug\net9.0\github-jk-is-2025-sk2.AssemblyInfo.cs
+C:\Users\jik\IS_2025_Sk2\github-jk-is-2025-sk2\obj\Debug\net9.0\github-jk-is-2025-sk2.csproj.CoreCompileInputs.cache
+C:\Users\jik\IS_2025_Sk2\github-jk-is-2025-sk2\obj\Debug\net9.0\github-jk-is-2025-sk2.sourcelink.json

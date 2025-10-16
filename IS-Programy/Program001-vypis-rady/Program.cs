@@ -53,6 +53,24 @@ while (again == "a");
     Console.WriteLine("První číslo: {0}; poslední číslo: {1}; diference {2}, first, last, step");
     Console.WriteLine("=============");
 
+    //Výpus číselné řady
+    Console.WriteLine();
+    Console.WriteLine("=========");
+    Console.WriteLine("Výpis číselné řady");
+
+    int current = first;
+    while (current <= last) {
+        Console.WriteLine(current);
+        current = current + step; //přičtení diference k aktuální vypisované hodnotě
+    }
+
+    
+     
+
+
+
+
+
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");
     again = Console.ReadLine();

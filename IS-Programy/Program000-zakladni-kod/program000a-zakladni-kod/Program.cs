@@ -1,4 +1,4 @@
-﻿﻿string again = "a";
+﻿string again = "a";
 while (again == "a")
 {
     Console.Clear();
@@ -12,9 +12,7 @@ while (again == "a")
     Console.WriteLine("********************************************");
     Console.WriteLine();
 
-    // Vstup hodnoty do programu, ale špatně řešený
-    //Console.Write("Zadejte první číslo řady: ");
-    //int first = int.Parse(Console.ReadLine());
+
 
     // Vstup hodnoty do programu, řešený lépe
     Console.Write("Zadejte první číslo řady (celé číslo): ");

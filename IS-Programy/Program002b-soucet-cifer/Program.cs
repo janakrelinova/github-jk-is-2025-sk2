@@ -1,12 +1,24 @@
 ﻿using System;
-
 class Program
 {
+
     static void Main()
+
     {
+          Console.Clear();
+    Console.WriteLine("********************************************");
+    Console.WriteLine("*********** Součet cifer *************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine("************* Jana Křelinová ******************");
+    Console.WriteLine("************** 22.10.2025 *******************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine();
+    
         Console.Write("Zadej celé číslo: ");
         string vstup = Console.ReadLine();
-
+        
         int soucet = 0;
 
         foreach (char znak in vstup)
@@ -19,5 +31,7 @@ class Program
         }
 
         Console.WriteLine($"Součet cifer je: {soucet}");
+        Console.WriteLine();
+    
     }
 }

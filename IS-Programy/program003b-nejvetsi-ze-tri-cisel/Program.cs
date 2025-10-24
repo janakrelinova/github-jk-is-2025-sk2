@@ -35,30 +35,27 @@ while (again == "a")
     }
 
     Console.WriteLine();
-
+    Console.WriteLine("=====================================================");
     if (a > b)
+    {
         if (a > c)
-        {
-            Console.WriteLine($"Největší číslo je {a} ");
-        }
-
-    if (b > a)
+            Console.WriteLine($"Největší číslo je A = {a}");
+        else
+            Console.WriteLine($"Největší číslo je C = {c}");        
+            
+    } else
+    {
         if (b > c)
-        {
-            Console.WriteLine($"Největší číslo je {b}");
-        }
-        
-    if(c > a)
-        if(c > b)
-        {
-            Console.WriteLine($"Největší číslo je {c}");
-        }
+            Console.WriteLine($"Největší číslo je B = {b}");
+        else
+            Console.WriteLine($"Největší číslo je C = {c}");            
+    }
+    Console.WriteLine("=====================================================");
 
-
-
-
+    Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");
     again = Console.ReadLine();
 
 }
+
 

@@ -1,0 +1,163 @@
+﻿using System.Diagnostics;
+string again = "a";
+while (again == "a")
+
+    Console.Clear();
+    Console.WriteLine("********************************************");
+    Console.WriteLine("***** Generátor pseudonáhodných čísel ******");
+    Console.WriteLine("********************************************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine("************* Jana Křelinová ***************");
+    Console.WriteLine("************** 20.11.2025 ******************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine();
+
+
+    Console.Write("Zadajte počet čísel (celé číslo): ");
+    int n;
+    while(!int.TryParse(Console.ReadLine(), out n))
+    {
+        Console.Write("Nezadali jste celé číslo. Zadejte počet čísel znovu");
+    }
+
+    Console.Write("Zadajte dolní mez (celé číslo): ");
+    int lowerBound; //dolní mez
+    while(!int.TryParse(Console.ReadLine(), out lowerBound))
+    {
+        Console.Write("Nezadali jste celé číslo. Zadejte dolní mez znovu");
+    }
+
+    Console.Write("Zadajte horní mez (celé číslo): ");
+    int upperBound; //horní mez
+    while (!int.TryParse(Console.ReadLine(), out upperBound))
+    {
+        Console.Write("Nezadali jste celé číslo. Zadejte horní mez znovu");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("======================");
+    Console.WriteLine("Zadané hodnoty");
+    Console.WriteLine("Počet čísel: {0}, Dolní mez: {1}, Horní mez: {2}", n, lowerBound, upperBound);
+    //pokud by byla v {} všude 0, vypsalo by se všude jen "n"
+    Console.WriteLine("======================");
+    Console.WriteLine();
+
+    // deklarace pole (array)
+    int[] myRandNumbs = new int[n];
+
+    // příprava pro využití třídy Random
+    //Random myRandNumb = new Random();
+    Random myRandNumb = new Random(15); //seed - semínko
+
+
+    Console.WriteLine();
+    Console.WriteLine("Náhodná čísla: ");
+
+
+    for(int i = 0; i < n ; i++)
+    {
+        myRandNumbs[i] = myRandNumb.Next(lowerBound, upperBound);
+        Console.Write("{0}; ", myRandNumbs[i]);
+    }
+
+    Stopwatch myStopwatch = new Stopwatch();
+
+
+    int compare = 0; //počet porovnávání
+    int change = 0; //počet výměn
+
+    myStopwatch.Start(); 
+    for (int i = 0; i < n - 1; i++) //n-1 --protože začínám od nuly
+    {
+        // tento cyklus musí zajistit porovnávání dvou sousedních hodnot
+        //musí zajistit, aby se zmenšoval počet porovnávaných hodnot
+        for (int j = 0; j < n - 1 - i; j++)
+        {
+            if(myRandNumbs[j] < myRandNumbs[j + 1])
+            {
+                int tmp = myRandNumbs[j+1];
+                myRandNumbs[j+1] = myRandNumbs[j];
+                myRandNumbs[j] = tmp; //prohození čísel j a j+1
+                change++;
+            }
+            compare++;
+        }
+    } myStopwatch.Stop();
+
+    
+    
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("Seřazené pole: ");
+    for(int i = 0; i < n; i++)
+    {
+        Console.WriteLine("{0}", myRandNumbs[i]);
+    }
+
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine($"Počet porovnávání: {compare}");
+    Console.WriteLine($"Počet výměn: {change}");
+    Console.WriteLine();
+    Console.WriteLine();
+
+    Console.WriteLine();
+    Console.WriteLine("Čas seřazení čísel pomocí BS: {0}", myStopwatch.Elapsed);
+
+
+    int max = myRandNumbs[0];
+    int secondMax = max;
+
+    for (int i = 1; i < n; i++)
+    {
+        if (myRandNumbs[i] < max)
+        {
+            secondMax = myRandNumbs[i];
+            break;
+        }
+    }
+
+    Console.WriteLine($"Druhé největší číslo je: {secondMax}");
+
+
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine($"Obrazec o velikosti: {secondMax}");
+    Console.WriteLine();
+    Console.WriteLine();
+
+
+    int sloupce = secondMax;
+    int radky = secondMax;
+    
+    for (int i = 0; i < radky; i++)
+    {
+        for(int j = 0; j < sloupce; j++) //nezapomenout, že začínám od nuly, ne od 1!!
+        {
+            if(i == 0 || i == 1 || i == radky -2 || i == radky -1 ) 
+            Console.Write("*");
+
+            else if (i > 1 && i < radky - 2 && (j == 0 || j == sloupce - 1)) //AND má přednost před NEBO - musí být v závorce
+            Console.Write("*");
+
+            else
+            {
+                Console.Write(" ");
+            }
+                   
+        }
+        Console.WriteLine();
+    }
+
+
+    
+
+
+
+    Console.WriteLine();
+    Console.WriteLine("Pro opakování programu stiskněte klávesu a");
+    again = Console.ReadLine();
+
+
+
